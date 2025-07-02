@@ -1,10 +1,8 @@
 import express from 'express';
-import { config } from 'dotenv';
+import dotenv from "dotenv";
 import medrouter from './router/med_router.js';
 import cors from "cors"
-config({
-    path: "./.env"
-});
+dotenv.config();
 
 const app = express();
 const corsOptions = {
