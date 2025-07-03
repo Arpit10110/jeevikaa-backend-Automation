@@ -23,7 +23,7 @@ const Schema = new mongoose.Schema({
   type: String,
   pack_size_label: String,
   short_composition1: String,
-  short_composition2: String,
+  short_composition2: String, 
   createdAt: { type: Date, default: Date.now },
 });
 

@@ -3,8 +3,12 @@ import { MedModel } from "../model/medmodel.js";
 
 export const getallMedicines = async(req,res)=>{
     try {
-        // fetching first 12 medicines
-        const all_med = await MedModel.find({}).limit(12);
+        const {page} = await req.body;
+        
+        const limit = 12;
+        const skip = (page - 1) * limit;
+
+        const all_med = await MedModel.find({}).skip(skip).limit(limit);
         return res.json({
             message: "All medicines fetched successfully",
             data: all_med
@@ -18,4 +22,4 @@ export const getallMedicines = async(req,res)=>{
             })
         )
     }
-} 
+}  

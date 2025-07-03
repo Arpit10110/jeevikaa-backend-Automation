@@ -17,10 +17,10 @@ medrouter.get("/medrouter/test",(req,res)=>{
             error: error.message
         })
     )
-  }
+  } 
 })
 
 //get all medicine
-medrouter.get("/medrouter/getallmedicines",getallMedicines);
+medrouter.post("/medrouter/getallmedicines",getallMedicines);
 
 export default medrouter;
